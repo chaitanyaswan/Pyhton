@@ -1,0 +1,13 @@
+input()
+s=list(input().split())
+sig=set()
+dbl=set()
+for i in s:
+    if (i not in sig and i not in dbl):
+        sig.add(i)
+    else:
+        dbl.add(i)
+        sig.discard(i)
+sig.difference_update(dbl)
+popped=sig.pop()
+print(popped)
